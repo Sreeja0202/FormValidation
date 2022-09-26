@@ -5,15 +5,31 @@
 <!-- login form starts -->
 <div class="container mt-5 col-md-4">
   <h3 class="text-danger text-center"><b>LOGIN</b></h3>
-  <form class="form mt-3 bg-dark p-3">
+  <form
+    class="form mt-3 bg-dark p-3"
+    [formGroup]="loginForm"
+    (ngSubmit)="logIn()"
+  >
     <div class="form-group">
       <label for="femail" class="text-light">Enter Email</label>
-      <input type="email" required class="form-control" />
+      <input type="email" class="form-control" formControlName="femail" />
+      <small class="text-light">We will not share your mail id</small>
+    </div>
+    <!-- <div *ngIf="femail.invalid && femail.touched">
+      <span>Enter an Email</span> -->
+      <!-- <span *ngIf="femail.errors?.email" class="text-danger"
+        >Please enter a valid Email</span
+      > -->
     </div>
     <br />
     <div class="form-group">
       <label for="fpassword" class="text-light">Enter Password</label>
-      <input type="password" required class="form-control" />
+      <input
+        type="password"
+        required
+        class="form-control"
+        formControlName="fpassword"
+      />
     </div>
     <br />
     <br />

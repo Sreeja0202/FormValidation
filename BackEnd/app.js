@@ -6,11 +6,7 @@ const userRoutes = require("./routes/user.routes.js");
 const app = new express();
 
 app.use(express.json());
-app.use(
-  cors({
-    origin: "http://loclhost:4200",
-  })
-);
+app.use(cors());
 
 app.listen("3000", () => {
   console.log("Server started @ port 3000");
